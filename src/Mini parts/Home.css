@@ -1,0 +1,504 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 8vh;
+  background-color: #e4f3ff;
+}
+.swipe-cards {
+  height: 25vw;
+  width: 99vw;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 10px;
+}
+.swipeable-cards {
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+@keyframes swipe {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.swipeable-cards {
+  height: 100%;
+  width: 100%;
+  max-width: 1600px;
+  float: right;
+  padding: 30px 6vw;
+  position: relative;
+  background-color: #c6cee6;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.swipeable-cards p {
+  height: auto;
+  width: 50%;
+  font-size: 2vw;
+  font-weight: 750;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #053038;
+}
+.swipeable-cards span {
+  height: 50px;
+  width: 50%;
+  font-size: 1rem;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgb(95, 95, 95);
+}
+.swipeable-cards img {
+  height: 90%;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  border-radius: 20px;
+  box-shadow: 0px 5px 50px 5px #003049;
+  transform: translatey(-50%);
+}
+.card-price p {
+  padding-left: 70px;
+  font-size: 2.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20px;
+  text-shadow: 0px 5px 8px rgb(133, 133, 133);
+}
+.arrow-forward {
+  position: absolute;
+  left: 10px;
+  height: 15vh;
+  width: 5%;
+  font-size: 5.5rem;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+  cursor: pointer;
+  z-index: 1;
+}
+.arrow-backward {
+  position: absolute;
+  right: 10px;
+  height: 15vh;
+  width: 5%;
+  font-size: 5.5rem;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+  cursor: pointer;
+  z-index: 1;
+}
+.products-container {
+  width: 98vw;
+  max-width: 1600px;
+  height: auto;
+  margin-top: 10px;
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.products-container img {
+  height: auto;
+  width: 80%;
+  align-self: center;
+}
+.product-card {
+  height: auto;
+  width: 15vw;
+  padding: 10px;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  gap: 15px;
+}
+.products-container p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.05vw;
+  font-weight: 650;
+}
+.mini-card {
+  height: 25vw;
+  width: auto;
+  display: grid;
+  background-color: white;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+  overflow: hidden;
+}
+.mini-card img {
+  height: 80%;
+  width: auto;
+}
+.mini-card p {
+  width: 100%;
+  grid-column: 1 / span 2;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 0.7rem;
+  overflow: hidden;
+}
+.card span {
+  height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  bottom: 0px;
+}
+.solo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.solo p {
+  height: 70px;
+}
+.long-card {
+  height: 15vw;
+  max-width: 1600px;
+  background: white;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin-top: 20px;
+  flex-direction: row;
+  display: grid;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.tv-card {
+  height: auto;
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding: 5px;
+  cursor: pointer;
+}
+.tv-card img {
+  height: auto;
+}
+.tv-card span {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 9vh;
+    left: 50vw;
+    transform: translateX(-50%);
+  }
+  .swipe-cards {
+    height: 25vh;
+    width: 95vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 0;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+  }
+  .swipeable-cards {
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+  }
+  @keyframes swipe {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  .swipeable-cards {
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    float: right;
+    padding: 10px 35px;
+    position: relative;
+    background-color: #cdd8fc;
+    display: grid;
+    grid-template-rows: 25px 20px auto;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    cursor: pointer;
+  }
+  .swipeable-cards p {
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 750;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #053038;
+  }
+  .swipeable-cards span {
+    height: auto;
+    width: 50%;
+    font-size: 10px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgb(95, 95, 95);
+  }
+  .swipeable-cards img {
+    height: auto;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px #003049;
+    transform: translatey(-45%);
+  }
+  .card-price p {
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    text-shadow: 0px 5px 8px rgba(133, 133, 133, 0.596);
+    position: relative;
+    top: -20px;
+  }
+  .arrow-forward {
+    position: absolute;
+    left: 5px;
+    height: 100px;
+    width: 5%;
+    font-size: 60px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    -webkit-text-stroke: 2px black;
+    cursor: pointer;
+    z-index: 9;
+  }
+  .arrow-backward {
+    position: absolute;
+    right: 5px;
+    height: 100px;
+    width: 5%;
+    font-size: 60px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    -webkit-text-stroke: 2px black;
+    cursor: pointer;
+    z-index: 9;
+  }
+  .products-container {
+    width: 98vw;
+    max-width: 1500px;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10vh;
+    position: relative;
+  }
+  .products-container img {
+    height: auto;
+    width: 80%;
+    align-self: center;
+  }
+  .product-card {
+    height: auto;
+    width: 15vw;
+    padding: 10px;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .products-container p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1.05vw;
+    font-weight: 650;
+  }
+  .mini-card {
+    height: 55vh;
+    width: 95vw;
+    display: grid;
+    background-color: #cdd8fc;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #000000;
+  }
+  .mini-card img {
+    height: 80%;
+    width: auto;
+    border-radius: 10px;
+  }
+  .mini-card p {
+    height: 30px;
+    width: 100%;
+    grid-column: 1 / span 2;
+    font-size: 1.25rem;
+    font-weight: 900;
+    align-content: center;
+    border-radius: 8px;
+    padding-left: 5px;
+  }
+  .card {
+    height: 20vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    background-color: #06114d15;
+    backdrop-filter: blur(50px);
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .card span {
+    height: 20px;
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    text-align: center;
+    align-content: center;
+    bottom: 0px;
+  }
+  .solo {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+  }
+  .solo .card{
+    height: 100%;
+    width: 90vw;
+  }
+  .solo p {
+    height: 30px;
+  }
+  .long-card {
+    height: auto;
+    width: 95wvw;
+    border-radius: 8px;
+    background: none;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 10px;
+    background-color: #cdd8fc;
+    padding: 10px;
+  }
+  .tv-card {
+    height: 25vh;
+    width: 85%;
+    display: flex;
+    background-color: #ffffff;
+    backdrop-filter: blur(50px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .tv-card img {
+    height: auto;
+  }
+  .tv-card span {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
